@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "dom",
+        "es5",
+        "es2015.collection",
+        "es2015.iterable",
+        "es2015.promise"
+      ],
+      "jsx": "react",
+      "rootDirs": [".", "../dist/bin/src"],
+      "experimentalDecorators": true,
+      "types": []
+    }
+  }

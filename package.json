@@ -1,0 +1,23 @@
+{
+  "name": "bazel-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "depenncies": {
+    "react": "16.8.4",
+    "react-dom": "16.8.4"
+  },
+  "devDependencies": {
+    "@bazel/ibazel": "0.10.3",
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
+    "@bazel/bazel": "0.26.1",
+    "@bazel/typescript": "0.31.1",
+    "typescript": "3.5.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
