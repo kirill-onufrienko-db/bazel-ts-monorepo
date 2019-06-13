@@ -3,3 +3,17 @@ package(default_visibility = ["//visibility:public"])
 exports_files([
   "tsconfig.json",
 ])
+
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+
+ts_library(
+    name = "frontend",
+    srcs = ["src/main.tsx", "src/app.tsx"],
+    tsconfig = "//:tsconfig.json",
+    deps = [
+       "@npm//react",
+       "@npm//@types/react",
+       "@npm//react-dom",
+       "@npm//@types/react-dom",
+    ]
+)

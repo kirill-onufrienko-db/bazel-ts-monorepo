@@ -1,5 +1,46 @@
+###############################
+# Typescript / Angular / Sass #
+###############################
+# Make TypeScript compilation fast, by keeping a few
+# copies of the compiler running as daemons, and cache SourceFile
+# ASTs to reduce parse time.
 build --strategy=TypeScriptCompile=worker
 
+###############################
+# Directory structure         #
+###############################
+
+# Artifacts are typically placed in a directory called "dist"
+# Be aware that this setup will still create a bazel-out symlink in
+# your project directory, which you must exclude from version control and your
+# editor's search path.
 build --symlink_prefix=dist/
 
+# A more useful default output mode for bazel query, which
+# prints "ng_module rule //foo:bar" instead of just "//foo:bar".
+query --output=label_kind
+
+# By default, failing tests don't print any output, it's logged to a
+# file instead.
+test --test_output=errors
+
+# Enable debugging tests with --config=debug
+test:debug --test_arg=--node_options=--inspect-brk --test_output=streamed --test_strategy=exclusive --test_timeout=9999 --nocache_test_results
+
+# Turn off legacy external runfiles
 run --nolegacy_external_runfiles
+test --nolegacy_external_runfiles
+
+# Use managed directories
+build --experimental_allow_incremental_repository_updates
+query --experimental_allow_incremental_repository_updates
+
+##################################################
+# Load any settings specific to the current user.
+##################################################
+
+# Needs to be last statement in this
+# config, as the user configuration should be able to overwrite flags from this file.
+# To use Remote Build Execution, this file should contain a line like
+# build --google_credentials=[path to the .json credentials file]
+try-import .bazelrc.user

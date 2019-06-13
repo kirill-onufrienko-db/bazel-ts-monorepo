@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <main id="root"></main>
+
+    <script src="/bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <script>
+      require.config({ paths: { "react-dom": "react-dom.development" } });
+      require.config({ paths: { react: "react.development" } });
+      require(["main"]);
+    </script>
+  </body>
+</html>
