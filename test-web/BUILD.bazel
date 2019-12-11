@@ -1,0 +1,10 @@
+package(default_visibility=["//visibility:public"])
+
+load("@npm_bazel_rollup//:index.bzl", "rollup_bundle")
+
+rollup_bundle(
+    name = "bundle",
+    srcs = glob(["**/*.ts"]),
+    entry_point = "index.js",
+    config_file = "rollup.config.js",
+)

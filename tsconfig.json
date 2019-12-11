@@ -8,7 +8,8 @@
         "sourceMap": true,
         "outDir": "./dist",
         "target": "esnext",
-        "module": "esnext",
+        // https://github.com/microsoft/TypeScript/issues/26859
+        "module": "es2015",
         "paths": {
             "test_bazel_build/*": ["*"]
         }
@@ -18,5 +19,9 @@
         "bazel-out",
         "dist",
         "**/*.spec.ts"
-    ]
+    ],
+    // https://github.com/bazelbuild/rules_typescript/blob/master/internal/tsc_wrapped/tsconfig.ts
+    "bazelOptions": {
+        "workspaceName": "test_bazel_build"
+    }
 }

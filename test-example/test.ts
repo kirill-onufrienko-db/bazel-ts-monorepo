@@ -1,4 +1,4 @@
-import { example } from 'test_bazel_build/test-library/index';
+import { example } from 'test_bazel_build/test-library';
 
 example();
 example();
