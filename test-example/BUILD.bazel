@@ -8,5 +8,5 @@ ts_library(
     module_name = "test-example",
     deps = [
         "//test-library"
-    ],
+    ]
 )

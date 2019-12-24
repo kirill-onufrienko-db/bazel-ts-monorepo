@@ -9,7 +9,7 @@
         "outDir": "./dist",
         "target": "esnext",
         // https://github.com/microsoft/TypeScript/issues/26859
-        "module": "es2015",
+        "module": "esnext",
         "paths": {
             "test_bazel_build/*": ["*"]
         }
