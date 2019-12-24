@@ -1,10 +1,15 @@
 package(default_visibility=["//visibility:public"])
 
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
 load("@npm_bazel_rollup//:index.bzl", "rollup_bundle")
+
+ts_library(
+    name = "index",
+    srcs = ["index.ts"],
+)
 
 rollup_bundle(
     name = "bundle",
-    srcs = glob(["**/*.ts"]),
-    entry_point = "index.js",
-    config_file = "rollup.config.js",
+    entry_point = ":index.ts",
+    deps = [":index"],
 )

@@ -6,12 +6,11 @@
         "@bazel/bazel": "latest",
         "@bazel/buildifier": "latest",
         "@bazel/ibazel": "latest",
-        "@bazel/rollup": "^0.42.1",
-        "@bazel/typescript": "0.42.1",
-        "rollup": "~1.27.0",
-        "rollup-plugin-bundle-html": "^0.2.2",
+        "@bazel/rollup": "^1.0.0",
+        "@bazel/typescript": "^1.0.0",
+        "rollup": "~1.27.14",
         "rollup-plugin-typescript2": "^0.25.3",
-        "typescript": "~3.7.0"
+        "typescript": "~3.7.4"
     },
     "scripts": {
         "build": "bazel build //...",
