@@ -6,16 +6,23 @@ load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
 
 ts_library(
     name = "index",
-    srcs = glob(["**/*.ts"]),
+    srcs = glob(["**/*.ts", "**/*.tsx"]),
     deps = [
-        "//test-example"
+        "//test-example",
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//@types",
     ]
 )
 
 rollup_bundle(
     name = "bundle",
-    entry_point = ":index.ts",
-    deps = [":index"],
+    entry_point = ":index.tsx",
+    deps = [
+        ":index",
+        "@npm//rollup-plugin-commonjs",
+        "@npm//rollup-plugin-node-resolve"
+    ],
     config_file = "rollup.config.js",
 )
 

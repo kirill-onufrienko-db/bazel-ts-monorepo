@@ -6,6 +6,9 @@
         "preserveConstEnums": true,
         "removeComments": true,
         "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
         "outDir": "./dist",
         "target": "esnext",
         // https://github.com/microsoft/TypeScript/issues/26859

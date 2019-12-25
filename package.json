@@ -8,7 +8,10 @@
         "@bazel/ibazel": "latest",
         "@bazel/rollup": "^1.0.0",
         "@bazel/typescript": "^1.0.0",
+        "@types/react": "^16.9.17",
+        "@types/react-dom": "^16.9.4",
         "rollup": "~1.27.14",
+        "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-typescript2": "^0.25.3",
         "typescript": "~3.7.4"
@@ -16,5 +19,9 @@
     "scripts": {
         "build": "bazel build //...",
         "test": "bazel test //..."
+    },
+    "dependencies": {
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0"
     }
 }
