@@ -15,7 +15,8 @@ ts_library(
 rollup_bundle(
     name = "bundle",
     entry_point = ":index.ts",
-    deps = [":index"]
+    deps = [":index"],
+    config_file = "rollup.config.js",
 )
 
 pkg_web(
