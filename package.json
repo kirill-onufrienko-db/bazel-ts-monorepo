@@ -8,12 +8,12 @@
         "@bazel/ibazel": "latest",
         "@bazel/rollup": "^1.0.0",
         "@bazel/typescript": "^1.0.0",
+        "@rollup/plugin-commonjs": "^11.0.1",
+        "@rollup/plugin-node-resolve": "^6.1.0",
         "@types/react": "^16.9.17",
         "@types/react-dom": "^16.9.4",
         "rollup": "~1.27.14",
-        "rollup-plugin-commonjs": "^10.1.0",
-        "rollup-plugin-node-resolve": "^5.2.0",
-        "rollup-plugin-typescript2": "^0.25.3",
+        "rollup-plugin-inject-process-env": "^1.1.0",
         "typescript": "~3.7.4"
     },
     "scripts": {

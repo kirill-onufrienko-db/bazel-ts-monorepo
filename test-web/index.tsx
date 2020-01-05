@@ -3,11 +3,11 @@ import * as ReactDom from 'react-dom';
 
 import { second_level_example } from 'test_bazel_build/test-example';
 
-class Component extends React.Component {
+class TestComponent extends React.Component {
     render() {
         return (<button>Push me</button>);
     }
 } 
 
 const rootElement = document.getElementById('root');
-ReactDom.render(<Component />, rootElement);
+ReactDom.render(<TestComponent />, rootElement);
