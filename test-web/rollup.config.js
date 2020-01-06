@@ -1,22 +1,21 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import injectProcessEnv from 'rollup-plugin-inject-process-env';
+import replace from '@rollup/plugin-replace';
 
-// TODO: look into https://github.com/rollup/rollup/issues/487#issuecomment-485660918
+const env = process.env.NODE_ENV || 'production';
 
-module.exports = {
+export default {
+  output: {
+    format: 'iife'
+  },
   plugins: [
-    injectProcessEnv({
-      NODE_ENV: 'production'
-    }),
-    resolve({
-      browser: true
-    }),
+    resolve(),
+    replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
     commonjs({
-      include: /node_modules/,
+      include: [/node_modules/],
       namedExports: {
-        'node_modules/react/index.js': ['Children', 'Component', 'PropTypes', 'createElement'],
-        'node_modules/react-dom/index.js': ['render'],
+        'react': ['Children', 'Component', 'PropTypes', 'createElement'],
+        'react-dom': ['render']
       }
     })
   ],

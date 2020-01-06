@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as ReactDom from 'react-dom';
+import * as ReactDOM from 'react-dom';
 
-import { second_level_example } from 'test_bazel_build/test-example';
+// import { second_level_example } from 'test_bazel_build/test-example';
 
 class TestComponent extends React.Component {
     render() {
@@ -10,4 +10,4 @@ class TestComponent extends React.Component {
 } 
 
 const rootElement = document.getElementById('root');
-ReactDom.render(<TestComponent />, rootElement);
+ReactDOM.render(<TestComponent />, rootElement);
