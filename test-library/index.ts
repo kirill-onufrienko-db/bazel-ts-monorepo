@@ -1,5 +1,6 @@
-import { example } from './example';
+import { example1, example2 } from './example';
 
 export {
-    example
+    example1,
+    example2
 };
