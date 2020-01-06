@@ -1,5 +1,5 @@
-import { second_level_example } from './test';
+import { TestComponent } from './example-component';
 
 export {
-    second_level_example
+    TestComponent
 };

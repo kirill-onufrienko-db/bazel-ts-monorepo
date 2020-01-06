@@ -1,6 +1,5 @@
-import { example1, example2 } from './example';
+import { getCurrentTimeMillis } from './get-current-time-millis';
 
 export {
-    example1,
-    example2
+    getCurrentTimeMillis
 };
