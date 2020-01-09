@@ -1,6 +1,6 @@
 package(default_visibility=["//visibility:public"])
 
-load("@npm_bazel_typescript//:index.bzl", "ts_library")
+load("@npm_bazel_typescript//:index.bzl", "ts_devserver", "ts_library")
 load("@npm_bazel_rollup//:index.bzl", "rollup_bundle")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
 
@@ -15,9 +15,20 @@ ts_library(
     ]
 )
 
+# Look into https://github.com/codesuki/rules_nodejs/blob/react-example/examples/reactjs/environment.dev.ts
+ts_devserver(
+    name = "devserver",
+    entry_module = "test_bazel_build/test-web/index",
+    deps = [
+        ":index",
+        "@npm//react:react__umd",
+        "@npm//react-dom:react-dom__umd",
+    ]
+)
+
 rollup_bundle(
     name = "bundle",
-    entry_point = ":index.tsx",
+    entry_point = ":index.prod.tsx",
     deps = [
         ":index",
         "@npm//@rollup/plugin-node-resolve",
@@ -31,6 +42,6 @@ pkg_web(
     name = "webapp",
     srcs = [
         ":bundle.js",
-        "index.html"
+        ":index.html"
     ]
 )

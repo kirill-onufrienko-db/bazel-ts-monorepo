@@ -1,9 +1,10 @@
-import * as React from 'react';
+import './env';
 import * as ReactDOM from 'react-dom';
-
-import { TestComponent } from 'test_bazel_build/test-example';
+import app from './app';
 
 window.onload = () => {
-    const rootElement = document.getElementById('root');
-    ReactDOM.render(<TestComponent />, rootElement);
+    const rootElement = document.createElement('div');
+    rootElement.setAttribute("id", "root");
+    document.body.appendChild(rootElement);
+    ReactDOM.render(app, rootElement);
 };
