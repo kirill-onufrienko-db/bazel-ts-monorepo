@@ -3,6 +3,7 @@ package(default_visibility=["//visibility:public"])
 load("@npm_bazel_typescript//:index.bzl", "ts_devserver", "ts_library")
 load("@npm_bazel_rollup//:index.bzl", "rollup_bundle")
 load("@build_bazel_rules_nodejs//:index.bzl", "pkg_web")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
 
 ts_library(
     name = "index",
@@ -15,7 +16,14 @@ ts_library(
     ]
 )
 
-# Look into https://github.com/codesuki/rules_nodejs/blob/react-example/examples/reactjs/environment.dev.ts
+sass_binary(
+    name = "main_styles",
+    src = "index.scss",
+    deps = [
+        "//test-example:styles"
+    ]
+)
+
 ts_devserver(
     name = "devserver",
     entry_module = "test_bazel_build/test-web/index",
@@ -23,6 +31,9 @@ ts_devserver(
         ":index",
         "@npm//react:react__umd",
         "@npm//react-dom:react-dom__umd",
+    ],
+    static_files = [
+        "index.css"
     ]
 )
 
@@ -35,13 +46,14 @@ rollup_bundle(
         "@npm//@rollup/plugin-commonjs",
         "@npm//@rollup/plugin-replace"
     ],
-    config_file = "rollup.config.js",
+    config_file = "rollup.config.js"
 )
 
 pkg_web(
     name = "webapp",
     srcs = [
         ":bundle.js",
+        ":index.css",
         ":index.html"
     ]
 )
