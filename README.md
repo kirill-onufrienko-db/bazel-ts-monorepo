@@ -1,0 +1,1 @@
+some useful thing to read: https://www.syntaxsuccess.com/viewarticle/angular-lazy-loading-with-bazel-and-rollup

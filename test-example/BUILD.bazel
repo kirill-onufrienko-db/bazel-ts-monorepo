@@ -17,5 +17,5 @@ ts_library(
 
 sass_library(
     name = "styles",
-    srcs = glob(["**/*.scss"])
+    srcs = ["_example-component.scss"]
 )

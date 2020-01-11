@@ -39,12 +39,12 @@ ts_setup_workspace()
 
 http_archive(
     name = "io_bazel_rules_sass",
-    sha256 = "617e444f47a1f3e25eb1b6f8e88a2451d54a2afdc7c50518861d9f706fc8baaa",
+    sha256 = "7b9c9a88099d00dbb16be359c3b1946309d99673220c6b39c7e8bda8ecc692f8",
     urls = [
-        "https://github.com/bazelbuild/rules_sass/archive/1.23.7.zip",
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_sass/archive/1.23.7.zip",
+        "https://github.com/bazelbuild/rules_sass/archive/1.24.4.zip",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_sass/archive/1.24.4.zip",
     ],
-    strip_prefix = "rules_sass-1.23.7",
+    strip_prefix = "rules_sass-1.24.4",
 )
 
 load("@io_bazel_rules_sass//:package.bzl", "rules_sass_dependencies")
