@@ -18,7 +18,7 @@
         "typescript": "~3.7.4"
     },
     "scripts": {
-        "build": "bazel build //test-web:webapp --verbose_failures --noexperimental_ui_deduplicate",
+        "build": "bazel build //test-web:webapp",
         "serve": "ibazel run //test-web:devserver",
         "test": "bazel test //..."
     },

@@ -21,8 +21,7 @@ sass_binary(
     src = "index.scss",
     deps = [
         "//test-example:styles"
-    ],
-    sourcemap = False
+    ]
 )
 
 ts_devserver(
@@ -30,6 +29,7 @@ ts_devserver(
     entry_module = "test_bazel_build/test-web/index",
     deps = [
         ":index",
+        ":main_styles",
         "@npm//react:react__umd",
         "@npm//react-dom:react-dom__umd",
     ],
